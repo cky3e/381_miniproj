@@ -1,0 +1,62 @@
+<html>
+	<head>
+	<title>Restaurant Information</title>
+
+	</head>
+	<body>
+			<div style="background-color:lightgreen" align="center">
+					<font size="10"><b> <%=result.name%>  </b></font>
+		</div>
+		                 
+		
+		
+		<%if(result.photo!= ""){%>
+		<br>
+        <img src="data:<%= result.mimetype%>;base64, <%=result.photo%>" >
+        <br>
+        <%}%>
+
+		<font size="5" face="sans-serif"> 
+		<!--Restaurant ID:  <%=result._id%><br>-->
+		Borough:  <%=result.borough%><br>
+		Cuisine:  <%=result.cuisine%><br>
+		Street:  <%=result.address.street%><br>
+		Building:  <%=result.address.building%><br>
+		Zipcode: <%=result.address.zipcode%><br>
+		GPS: <%=result.address.coord[0]%> , <%=result.address.coord[1]%> <br>
+		Created By: <%=result.owner%> <br>
+	
+		<%if(result.grades.length>0){%>
+		Rate: 
+      	<ol>
+      	<% result.grades.forEach(function(rate) { %>
+        <li><%= rate.user %>(<%= rate.score %>)</li>
+        <% });%>	
+		</ol>
+		<%}%>	
+	</font>
+		
+	<%if(result.address.coord[0]!="" && result.address.coord[1]!=""){%>
+		<a href="/gmap?lat=<%=result.address.coord[0]%>&lon=<%=result.address.coord[1]%>">Google map</a>
+<%}%>
+			<br>	<br>
+				<a href=/rate?id=<%= result._id %>>
+					<input type="button" value="Rate" style="width:90px;height:45px;font-size:18px;background-color:lightblue;">
+				</a>
+
+				<a href=/update?id=<%= result._id %>>
+					<input type="button" value="Edit" style="width:90px;height:45px;font-size:20px;background-color:lightblue;">
+				</a> 
+
+        <%if(result.owner == session){%>
+				<a href=/delete?id=<%= result._id %>>
+					<input type="button" value="Delete" style="width:90px;height:45px;font-size:18px;background-color:lightblue;">
+				</a>
+				<%}%>
+				
+				<a href=/list>
+					<input type="submit" class="button" value="Restaurant List" style="width:120px;height:45px;font-size:16px;background-color:lightblue;">	
+				</a>
+				
+	</body>
+</html>

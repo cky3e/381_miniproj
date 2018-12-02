@@ -1,0 +1,26 @@
+<html>
+	<head>
+	<title>Create new Restaurant</title>
+	</head>
+<body>
+		<div style="background-color:lightgreen" align="center">
+				<font size="8"><b>Create New Restaurant</b></font>
+		</div>
+	<form action="/new" method="post" enctype="multipart/form-data">
+  
+		<font size="5" face="sans-serif">
+		<p style="color:#FF0000;">*This field must not be empty.</p>
+    *Name: <br><input type="text" name="name"><br>
+		Borough: <br><input type="text" name="borough"><br>
+		Cuisine: <br><input type="text" name="cuisine"><br>
+		Street: <br><input type="text" name="street"><br>
+		Building: <br><input type="text" name="building"><br>
+		Zipcode: <br><input type="text" name=zipcode><br>
+		GPS Coordinates (lon.): <br><input type="number" min="0.0000001" step="0.0000001" name="lon"><br>
+		GPS Coordinates (lat.): <br><input type="number" min="0.0000001" step="0.0000001" name="lat"><br>
+		Photo: <input type="file" name="filetoupload"><br><br>
+	</font>
+	<input type="submit" class="button" value="Create" style="width:80px;height:30px;font-size:15px;background-color:lightblue;">
+	</form>
+</body>
+</html>

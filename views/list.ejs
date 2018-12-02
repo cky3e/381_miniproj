@@ -1,0 +1,36 @@
+<html>
+	<head>
+	<title>Restaurants</title>
+	
+	</head>
+	<body>
+			<div style="background-color:lightgreen" align="center">
+					<font size="8"><b>Restaurants</b></font>
+			</div>
+			<br>
+
+			<font size="6" align="left" face="sans-serif"> Hello <i> <%=session%> </i> ! </font>
+		
+			<font size="4" align="left" face="sans-serif">
+        <ol>
+            <% result.forEach(function(restaurant) { %>
+        <li><a href=/display?id=<%= restaurant._id %>><%= restaurant.name %></a></li>
+        <% });%>
+		</ol>	
+		</font>	
+		<br>
+
+		<a href=/new class="button"> 
+		<input type="button" value="Create restaurant document" style="width:250px;height:60px;font-size:18px;background-color:lightblue;">
+		</a>
+
+		<a href=/search class="button">
+			<input type="button" value="Search" style="width:250px;height:60px;font-size:20px;background-color:lightblue;">
+			</a>
+
+		<a href=/logout class="button">
+			<input type="button" value="LOG OUT" style="width:250px;height:60px;font-size:20px;background-color:rgb(255, 59, 59);">
+		</a>
+
+	</body>
+</html>

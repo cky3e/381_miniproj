@@ -1,0 +1,27 @@
+<html>
+	<head>
+	<title>Update Restaurant</title>
+	</head>
+	<body>
+			<div style="background-color:lightgreen" align="center">
+					<font size="8"><b>Update Restaurant</b></font>
+			</div>
+
+		<form action="/update?id=<%=result._id%>" method="post" enctype="multipart/form-data">
+			<font size="5" face="sans-serif">
+
+			<p style="color:#FF0000;">*This field must not be empty.</p>
+    	*Name: <br><input type="text" name="name" value = "<%=result.name%>" required><br>
+			Borough: <br><input type="text" name="borough" value = "<%=result.borough%>"><br>
+			Cuisine: <br><input type="text" name="cuisine" value = <%=result.cuisine%>><br>
+			Street: <br><input type="text" name="street" value = <%=result.address.street%>><br>
+			Building: <br><input type="text" name="building" value = <%=result.address.building%>><br>
+			Zipcode: <br><input type="text" name=zipcode value = <%=result.address.zipcode%>><br>
+			GPS Coordinates (lon.): <br><input type="number" min="0.0000001" step="0.0000001" name="lon" value = <%=result.address.coord[0]%><br><br>
+			GPS Coordinates (lat.): <br><input type="number" min="0.0000001" step="0.0000001" name="lat" value = <%=result.address.coord[1]%><br><br>
+			Photo: <input type="file" name="filetoupload" accept = "image/*"><br><br>
+			</font>
+			<input type="submit" class="button" value="Update"style="width:80px;height:30px;font-size:15px;background-color:lightblue;">
+		</form>
+	</body>
+</html>

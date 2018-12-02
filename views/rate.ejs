@@ -1,0 +1,31 @@
+<html>
+    <head>
+    <title>Rate</title>
+    </head>
+<body>
+        <div style="background-color:lightgreen" align="center">
+                <font size="8"><b> Rate </b></font>
+             </div>
+    <form action="/rate?id=<%=id%>" method="post" enctype="multipart/form-data">
+        <br>
+    <font size="5" face="sans-serif">
+    Score: 
+    <select name="score">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+    <p style="color:#FF0000;">Please rate between 1 and 10.</p>
+    
+    </font>
+    <input type="submit" class="button" value="Rate" style="width:80px;height:30px;font-size:15px;background-color:lightblue;">
+	</form>
+</body>
+</html>

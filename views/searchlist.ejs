@@ -1,0 +1,19 @@
+<html>
+	<head>
+	<title>Search results</title>
+	
+	</head>
+	<body>
+			<div style="background-color:lightgreen" align="center">
+					<font size="8"><b>Search Result</b></font>
+				</div>
+			<br>
+			<font size="5" face="sans-serif"> 
+        <ol>
+            <% result.forEach(function(restaurant) { %>
+        <li><a href=/display?id=<%= restaurant._id %>><%= restaurant.name %></a></li>
+        <% });%>
+		</ol>
+		</font>
+	</body>
+</html>

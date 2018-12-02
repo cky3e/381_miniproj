@@ -1,0 +1,27 @@
+<html>
+	<head>
+	<title>Search</title>
+	</head>
+
+	<body>
+			<div style="background-color:lightgreen" align="center">
+					<font size="8"><b>Search</b></font>
+				</div>
+				<br>
+    	<form action="/search" method="post" enctype="multipart/form-data">
+    		<h1>Search By: </h1>
+
+    		<select name="searchBy">
+        	<option value="name">name</option>
+        	<option value="borough">borough</option>
+        	<option value="cuisine">cuisine</option>
+        	<option value="building">building</option>
+        	<option value="street">street</option>
+        	<option value="zipcode">zipcode</option>
+    		</select>
+				<input type="text" name="field"><br><br>
+				
+    		<input type="submit" class="button" value="Search"style="width:80px;height:30px;font-size:15px;background-color:lightblue;">
+		</form>
+	</body>
+</html>
